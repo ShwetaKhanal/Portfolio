@@ -3,6 +3,9 @@ body {
   font-family: sans-serif;
   background-color: #EFEEEE;
   color: #999999;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 a {
@@ -13,32 +16,36 @@ a {
 header {
   text-align: center;
   padding: 30px 0;
-  background: transparent;
 }
 
 header h1 {
   color: #D3C4BE;
   font-size: 2.5em;
+  margin: 0;
 }
 
-.main-layout {
+.center-content {
+  flex: 1;
   display: flex;
-  justify-content: space-between;
-  padding: 20px 40px;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
 }
 
-.about, .contact {
-  width: 45%;
+.about, .projects {
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
-.about h2, .contact h2, .projects h2, .project h3 {
+.about h2, .projects h2, .project h3 {
   color: #D3C4BE;
 }
 
-.projects {
-  padding: 40px;
-}
-
-.project {
-  margin-bottom: 30px;
+footer {
+  text-align: center;
+  padding: 20px;
+  background: transparent;
+  font-size: 0.9em;
 }
