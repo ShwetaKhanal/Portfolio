@@ -19,23 +19,35 @@ header {
 }
 
 header h1 {
-  color: #607581;
+  color: #D3C4BE;
   font-size: 2.5em;
   margin: 0;
 }
 
+/* Main flex layout for About + Projects */
 .center-content {
-  flex: 1;
-  padding: 40px 20px;
-  max-width: 900px;
-  width: 100%;
-  margin: 0 auto;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
   gap: 40px;
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.section-box {
+/* About box (narrower) */
+.about.section-box {
+  flex: 1;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Projects box (wider) */
+.projects.section-box {
+  flex: 2;
   background-color: white;
   padding: 30px;
   border-radius: 10px;
@@ -43,7 +55,7 @@ header h1 {
 }
 
 .about h2, .projects h2, .project h3 {
-  color: #607581;
+  color: #D3C4BE;
   margin-top: 0;
 }
 
@@ -53,9 +65,13 @@ header h1 {
   margin-bottom: 0;
 }
 
+/* Spacing between projects */
+.project {
+  margin-bottom: 30px;
+}
+
 footer {
   text-align: center;
   padding: 20px;
-  background: transparent;
   font-size: 0.9em;
 }
