@@ -75,3 +75,29 @@ footer {
   padding: 20px;
   font-size: 0.9em;
 }
+
+/* -------- Responsive Layout for Small Screens -------- */
+@media (max-width: 768px) {
+  .center-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .about.section-box,
+  .projects.section-box {
+    width: 100%;
+    flex: none;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+
+  .about h2, .projects h2, .project h3 {
+    font-size: 1.2em;
+  }
+
+  .project {
+    margin-bottom: 20px;
+  }
+}
