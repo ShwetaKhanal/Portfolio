@@ -1,11 +1,24 @@
+/* Base styling */
 body {
   margin: 0;
-  font-family: sans-serif;
-  background-color: #EFEEEE;
+  font-family: Calibri, sans-serif;
+  background: url('./assets/images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
   color: #999999;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(239, 238, 238, 0.8); /* 60% transparent overlay */
+  z-index: -1;
 }
 
 a {
@@ -24,101 +37,121 @@ header h1 {
   margin: 0;
 }
 
-/* Main flex layout for About + Projects */
+/* Layout Container */
 .center-content {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: stretch;
   padding: 40px 20px;
   gap: 40px;
-  flex: 1;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-/* About box (narrower) */
-.about.section-box {
   flex: 1;
-  background-color: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Projects box (wider) */
+/* About and Projects Layout */
+.top-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.about.section-box,
 .projects.section-box {
-  flex: 2;
   background-color: white;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.about h2, .projects h2, .project h3 {
+.about {
+  flex: 1;
+  min-width: 280px;
+}
+
+.projects {
+  flex: 1.5;
+  min-width: 280px;
+}
+
+/* Heading colors */
+.about h2,
+.projects h2,
+.project h3,
+.cartography h2 {
   color: #607581;
   margin-top: 0;
 }
 
-.about p, .project p {
+.about p,
+.project p {
   text-align: justify;
   line-height: 1.6;
   margin-bottom: 0;
 }
 
-/* Spacing between projects */
+/* Project spacing */
 .project {
   margin-bottom: 30px;
 }
 
+/* Cartography section */
+.cartography.section-box {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* Footer styling */
 footer {
   text-align: center;
   padding: 20px;
   font-size: 0.9em;
+  color: black;
 }
 
-/* -------- Responsive Layout for Small Screens -------- */
-@media (max-width: 768px) {
-  .center-content {
-    flex-direction: column;
-    gap: 20px;
-  }
+footer a {
+  color: black;
+}
 
-  .about.section-box,
-  .projects.section-box {
-    width: 100%;
-    flex: none;
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  .top-row {
+    flex-direction: column;
   }
 
   header h1 {
     font-size: 2em;
   }
 
-  .about h2, .projects h2, .project h3 {
+  .about h2,
+  .projects h2,
+  .project h3 {
     font-size: 1.2em;
   }
 
   .project {
     margin-bottom: 20px;
   }
-}
-
-body {
-  margin: 0;
-  font-family: sans-serif;
-  background: url('./assets/images/background.jpg') no-repeat center center fixed;
-  background-size: cover;
-  color: #999999;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(239, 238, 238, 0.8); /* white overlay at 60% transparency */
-  z-index: -1;
 }
